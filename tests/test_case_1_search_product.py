@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from pages.home_page import HomePage
@@ -23,6 +25,12 @@ def test_search_products(setup, search_term):
 
     log.info(f"Searching for product: {search_term}")
     products.search_product(search_term)
+
+    log.info("Scrolling down for 3 seconds to view results.....")
+    start_time = time.time()
+    while time.time() - start_time < 3:
+        page.mouse.wheel(0, 300)
+        time.sleep(0.5)
 
     log.info("Verifying 'Searched Products' title is visible.....")
     assert (
