@@ -34,50 +34,70 @@ cd automation_exercise_kinetik
 
 ### Create a Virtual Environment
 
--> python -m venv venv
+```bash
+python -m venv venv
+```
 
 ### Activate the environment:
 
 # Windows
 
--> venv\Scripts\activate
+```bash
+venv\Scripts\activate
+```
 
 # Mac/Linux
 
--> source venv/bin/activate
+```bash
+source venv/bin/activate
+```
 
 ### Install Dependencies
 
--> pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 ### Install Playwright Browsers
 
--> playwright install
+```bash
+playwright install
+```
 
 ### Running Tests
 
 # Run all tests:
 
--> pytest -v --html=report.html --self-contained-html
+```bash
+pytest -v --html=report.html --self-contained-html
+```
 
 # Run a specific test file:
 
--> pytest tests/test_case_1_search_product.py
--> pytest tests/test_case_2_add_to_cart.py
+```bash
+pytest tests/test_case_1_search_product.py
+pytest tests/test_case_2_add_to_cart.py
+```
 
 # Run tests with logs:
 
--> pytest -s -v
+```bash
+pytest -s -v
+```
 
 # Run tests in parallel:
 
--> pytest -n 4
+```bash
+pytest -n 4
+```
 
 ### Reports
 
 # After running tests with:
 
--> pytest -v --html=report.html --self-contained-html
+```bash
+pytest -v --html=report.html --self-contained-html
+```
 
 A report will be generated as report.html in the project root.
 Open it in a browser to view detailed results.
