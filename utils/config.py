@@ -1,3 +1,3 @@
-BASE_URL = "http://automationexercise.com"
+BASE_URL = "https://automationexercise.com/"
 BROWSER = "chromium"
-HEADLESS = True
+HEADLESS = False

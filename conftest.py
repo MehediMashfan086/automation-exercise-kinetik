@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from playwright.sync_api import sync_playwright
 
@@ -7,7 +9,13 @@ from utils import config
 @pytest.fixture(scope="function")
 def setup():
     with sync_playwright() as p:
-        browser = getattr(p, config.BROWSER).launch(headless=config.HEADLESS)
+        # If running in CI (like GitHub Actions), force headless=True
+        if os.getenv("CI"):
+            headless = True
+        else:
+            headless = config.HEADLESS
+
+        browser = getattr(p, config.BROWSER).launch(headless=headless)
         page = browser.new_page()
         yield page
         browser.close()
