@@ -15,7 +15,13 @@ def setup():
         else:
             headless = config.HEADLESS
 
-        browser = getattr(p, config.BROWSER).launch(headless=headless)
-        page = browser.new_page()
+        browser = getattr(p, config.BROWSER).launch(
+            headless=headless,
+            args=["--start-maximized"],
+        )
+
+        context = browser.new_context(no_viewport=True)
+        page = context.new_page()
+
         yield page
         browser.close()
