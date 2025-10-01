@@ -7,7 +7,7 @@ from utils import config
 @pytest.fixture(scope="function")
 def setup():
     with sync_playwright() as p:
-        browser = getattr(p, config.BROWSER).launch(headless=False)
+        browser = getattr(p, config.BROWSER).launch(headless=config.HEADLESS)
         page = browser.new_page()
         yield page
         browser.close()

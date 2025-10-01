@@ -1,1 +1,4 @@
-TEST_DATA = {"search_terms": ["dress", "shirt"]}
+TEST_DATA = {
+    "search_terms": ["dress", "shirt"],
+    "quantity": 4,
+}
